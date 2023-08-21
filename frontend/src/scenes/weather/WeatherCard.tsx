@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import SolNublado from "@/assets/SolNublado.png";
 
 
+
 const WeatherCard = (WeatherData: WeatherType.CardType) => {
   const overlayStyles = `p-5 absolute z-30 h-[380px] w-[310px] 
   whitespace-normal bg-gray-200 text-white opacity-0 rounded-[30px] text-center`;

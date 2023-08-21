@@ -5,8 +5,10 @@ export interface CardType {
   minTemperature: number | undefined;
   relativeHumidity: number | undefined;
   temperatureUnit: string | undefined;
-  relativeHumidityUnit:string|undefined;
+  relativeHumidityUnit: string | undefined;
 }
+
+export interface CardListType extends Array<CardType>{}
 
 // Request Types
 

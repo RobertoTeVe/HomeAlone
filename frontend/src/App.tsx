@@ -1,5 +1,4 @@
 import Navbar from "@/scenes/navbar";
-import Home from '@/scenes/home';
 import Footer from '@/scenes/footer';
 import { useEffect, useState } from "react";
 import { SelectedPage } from "@/shared/types";
