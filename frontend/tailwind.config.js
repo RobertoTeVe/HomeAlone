@@ -11,6 +11,7 @@ export default {
         "secondary-300":"#74A39D",
         "gray-100": "#4A0E16",
         "gray-200": "#241105",
+        "light-white":"#F7FAFF50",
       },
       backgroundImage: (theme) => ({
         "gradient-goldgray":

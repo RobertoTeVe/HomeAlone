@@ -1,5 +1,6 @@
 import * as WeatherType from "@/shared/types/Weather";
 // import { SelectedPage } from "@/shared/types";
+import { motion } from "framer-motion";
 import { getWeather } from "@/api/WeatherAPI";
 import { Settings } from "../../../settings";
 import { useCallback, useRef, useState } from "react";
@@ -62,7 +63,7 @@ function Weather() {
       {weatherState.hourly_units !== undefined ? (
         <>
           <label className="px-10 py-10 text-gray-100">
-            Time unit is: {weatherState.hourly_units?.time}{" "}
+            Time unit is: {weatherState.hourly_units?.time}
           </label>
           <label className="px-10 py-10 text-gray-100">
             Temperature unit is: {weatherState.hourly_units?.temperature_2m}
@@ -73,16 +74,16 @@ function Weather() {
       )}
       <div className="mt-10 h-[430px] w-full overflow-x-auto overflow-y-hidden">
         <ul className="w-[2800px] whitespace-nowrap">
-          {weatherList?.map((val, idx) => (
-            <WeatherCard
+            {weatherList?.map((val, idx) => (
+              <WeatherCard
               key={idx}
-              maxTemperature={val.maxTemperature}
-              minTemperature={val.minTemperature}
-              relativeHumidity={val.relativeHumidity}
-              temperatureUnit={val.temperatureUnit}
-              relativeHumidityUnit={val.relativeHumidityUnit}
-            ></WeatherCard>
-          ))}
+                maxTemperature={val.maxTemperature}
+                minTemperature={val.minTemperature}
+                relativeHumidity={val.relativeHumidity}
+                temperatureUnit={val.temperatureUnit}
+                relativeHumidityUnit={val.relativeHumidityUnit}
+              ></WeatherCard>
+            ))}
         </ul>
       </div>
     </section>
