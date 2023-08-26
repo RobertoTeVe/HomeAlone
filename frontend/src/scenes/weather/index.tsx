@@ -37,7 +37,7 @@ function Weather() {
 
       let listcar: WeatherType.CardListType = [];
 
-      for (let i = 0; i < 3; i = i + 1) {
+      for (let i = 0; i < 12; i = i + 1) {
         console.log(`${car.maxTemperature}`);
         listcar.push(car);
       }
@@ -50,10 +50,10 @@ function Weather() {
   return (
     <section
       id="weather"
-      className="gap-16 bg-primary-100 py-10 pt-20 md:h-full md:pb-0"
+      className="w-full gap-16 bg-primary-100 py-10 pt-20 md:h-full md:pb-0"
     >
       <button
-        className="ml-5 mb-5 group inline-flex rounded-full bg-primary-200 p-3 text-white"
+        className="group mb-5 ml-5 inline-flex rounded-full bg-primary-200 p-3 text-white"
         onClick={sendRequest}
       >
         <ArrowPathIcon className="mr-1 h-6 w-6 transition-all group-hover:rotate-180" />
@@ -71,25 +71,20 @@ function Weather() {
       ) : (
         ""
       )}
-      <div className="mx-3 flex flex-1 flex-wrap space-x-[340px]">
-        {weatherList?.map((val, idx) => (
-          <WeatherCard
-            key={idx}
-            maxTemperature={val.maxTemperature}
-            minTemperature={val.minTemperature}
-            relativeHumidity={val.relativeHumidity}
-            temperatureUnit={val.temperatureUnit}
-            relativeHumidityUnit={val.relativeHumidityUnit}
-          ></WeatherCard>
-        ))}
+      <div className="mt-10 h-[430px] w-full overflow-x-auto overflow-y-hidden">
+        <ul className="w-[2800px] whitespace-nowrap">
+          {weatherList?.map((val, idx) => (
+            <WeatherCard
+              key={idx}
+              maxTemperature={val.maxTemperature}
+              minTemperature={val.minTemperature}
+              relativeHumidity={val.relativeHumidity}
+              temperatureUnit={val.temperatureUnit}
+              relativeHumidityUnit={val.relativeHumidityUnit}
+            ></WeatherCard>
+          ))}
+        </ul>
       </div>
-      {/* <WeatherCard
-        maxTemperature={weatherState.hourly?.temperature_2m[14]}
-        minTemperature={weatherState.hourly?.temperature_2m[1]}
-        relativeHumidity={weatherState.hourly?.relativehumidity_2m[0]}
-        temperatureUnit={weatherState.hourly_units?.temperature_2m}
-        relativeHumidityUnit={weatherState.hourly_units?.relativehumidity_2m}
-      /> */}
     </section>
   );
 }

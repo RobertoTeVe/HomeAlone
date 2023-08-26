@@ -4,11 +4,12 @@ import SolNublado from "@/assets/SolNublado.png";
 
 
 
-const WeatherCard = (WeatherData: WeatherType.CardType) => {
-  const overlayStyles = `p-5 absolute z-30 h-[380px] w-[310px] 
+const WeatherCard = (WeatherData: WeatherType.CardType,) => {
+  const overlayStyles = `p-5 absolute z-30 flex w-[310px] 
   whitespace-normal bg-gray-200 text-white opacity-0 rounded-[30px] text-center`;
 
   return (
+    <li className={`relative mx-5 inline-block flex-1`}>
     <motion.div
       className={`grid grid-cols-3 grid-rows-3 ${overlayStyles}`}
       initial="hidden"
@@ -39,6 +40,7 @@ const WeatherCard = (WeatherData: WeatherType.CardType) => {
         <h5>{WeatherData.maxTemperature === undefined ? 0 : WeatherData.maxTemperature}{WeatherData.temperatureUnit}</h5>
       </div>
     </motion.div>
+    </li>
   );
 };
 
